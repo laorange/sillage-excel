@@ -85,5 +85,6 @@ def get_api_handler(debug=False) -> ApiHandler:
 
 if __name__ == '__main__':
     api_handler: ApiHandler = get_api_handler()
-    course_decorator = api_handler.get_filtered_courses("https://course.siae.top/#/course/?grade=17%E7%BA%A7")
-    ExcelHandler(course_decorator).output("17S5.xlsx")
+    url = input("请前往`迹云课表`复制网址：")  # "https://course.siae.top/#/course/?grade=17%E7%BA%A7"
+    course_decorator = api_handler.get_filtered_courses(url)
+    ExcelHandler(course_decorator).output("output.xlsx")
